@@ -1,0 +1,24 @@
+name: active-orb-slam2
+
+base:
+  ubuntu: 16.04
+  ros: kinetic-ros-base
+  opengl: runtime
+
+apt:
+  - libglew-dev
+  - libeigen3-dev
+  - libopencv-dev
+  - libompl-dev
+  - liboctomap-dev
+  - wget
+  - g++
+
+source:
+  - name: Pangolin
+    repo: https://github.com/stevenlovegrove/Pangolin.git
+    build: cmake
+
+custom:
+  - cd $HOME/active-orb-slam2 && chmod +x build.sh && sh build.sh
+
